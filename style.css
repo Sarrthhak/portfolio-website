@@ -512,6 +512,7 @@ section { padding: 120px 60px; position: relative; }
   border-radius: var(--radius); padding: 40px;
   display: flex; gap: 24px; align-items: flex-start;
   transition: var(--transition); position: relative; overflow: hidden;
+  align-items: stretch;
 }
 .achievement-card:hover {
   border-color: rgba(214,185,140,0.35);
@@ -541,7 +542,7 @@ section { padding: 120px 60px; position: relative; }
   color: var(--white); margin-bottom: 10px;
 }
 .achievement-desc {
-  font-size: 0.85rem; color: var(--grey); line-height: 1.7; margin-bottom: 16px;
+  font-size: 0.85rem; color: var(--grey); line-height: 1.7; margin-bottom: 16px; flex: 1;
 }
 .achievement-link {
   font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600;
@@ -549,6 +550,11 @@ section { padding: 120px 60px; position: relative; }
   transition: letter-spacing 0.3s; cursor: none;
 }
 .achievement-link:hover { letter-spacing: 2px; }
+.achievement-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 /* ============================
    SKETCHES SECTION
