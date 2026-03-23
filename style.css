@@ -657,18 +657,21 @@ footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40
   .hamburger { display: flex; }
   section { padding: 80px 28px; }
   #hero { padding: 100px 28px 60px; }
-  .hero-inner { flex-direction: column-reverse; align-items: center; }
+  .hero-inner {flex-direction: column-reverse;align-items: center;gap: 40px;}
   .hero-photo-frame { width: 200px; height: 200px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   footer { padding: 28px; flex-direction: column; text-align: center; }
   .resume-section { padding: 48px 28px; }
+  .achievements-grid {grid-template-columns: 1fr;max-width: 100%;}
+  .achievement-card {flex-direction: column;align-items: flex-start;}
 }
 @media (max-width: 600px) {
   .projects-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: 1fr; }
   .sketches-grid { grid-template-columns: 1fr 1fr; }
   .hero-cta { flex-direction: column; }
+  .achievements-grid {grid-template-columns: 1fr;}
 }
 @media (max-width: 400px) {
   .sketches-grid { grid-template-columns: 1fr; }
