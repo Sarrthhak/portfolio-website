@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarthak Pipladiya — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  EMAIL JS SETUP — 3 quick steps to make the form work:      ║
+  ║  1. Go to https://www.emailjs.com  and create a free account ║
+  ║  2. Add an Email Service (Gmail) → copy your Service ID     ║
+  ║  3. Create a Template, add variables:                        ║
+  ║     {{from_name}} {{from_email}} {{subject}} {{message}}    ║
+  ║     Copy the Template ID                                     ║
+  ║  4. Replace YOUR_PUBLIC_KEY, service_portfolio,             ║
+  ║     template_contact below with your actual values          ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init('iEoGbcIkQ16NbMLzL'); // ← Replace with your EmailJS public key
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<svg id="butterfly-cursor" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <path class="wing"        d="M20 20 C10 8, 2 5, 4 16 C6 22, 14 22, 20 20Z" fill="rgba(214,185,140,0.7)"/>
+  <path class="wing wing-r" d="M20 20 C30 8, 38 5, 36 16 C34 22, 26 22, 20 20Z" fill="rgba(214,185,140,0.7)"/>
+  <ellipse cx="20" cy="21" rx="2" ry="5" fill="#D6B98C"/>
+</svg>
+
+<!-- ============================  NAVBAR  ============================ -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">SP</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#not-coding">Sketches</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ============================  HERO  ============================ -->
+<section id="hero">
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-grid-bg"></div>
+
+  <div class="hero-inner">
+    <!-- TEXT -->
+    <div class="hero-content">
+      <p class="hero-eyebrow">Portfolio — B.Tech CSE</p>
+      <h1 class="hero-name">Sarthak<br><span>Pipladiya</span></h1>
+      <p class="hero-role">B.Tech CSE Student &nbsp;·&nbsp; Aspiring Data Scientist</p>
+      <p class="hero-tagline">"Torture the Data and it will confess to anything"</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact"  class="btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+
+    <!-- PHOTO FRAME
+         ─────────────────────────────────────────────────
+         To add your photo:
+           Option A — drop a file called  photo.jpg  (or .png / .webp)
+                       in the same folder as index.html,
+                       then replace  src="photo.jpg"  below.
+           Option B — paste a direct image URL into src="".
+         ─────────────────────────────────────────────────  -->
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-glow"></div>
+      <div class="hero-photo-ring2"></div>
+      <div class="hero-photo-ring"></div>
+      <div class="hero-photo-frame" id="hero-photo-frame">
+
+        <!-- ▼▼▼  REPLACE src="" WITH YOUR PHOTO PATH / URL  ▼▼▼ -->
+        <img src="photo.png" alt="Sarthak Pipladiya" id="hero-photo-img"
+             style="display:none; width:100%; height:100%; object-fit:cover; object-position:center top;">
+
+        <!-- Shown only while no photo is supplied -->
+        <div class="hero-photo-placeholder" id="herophoto-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Add your photo here</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll to explore</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+<div class="section-orb-divider"></div>
+
+<!-- ============================  ABOUT  ============================ -->
+<section id="about">
+  <div class="section-label">01 — Introduction</div>
+  <h2 class="section-title">About <span style="color:var(--gold)">Me</span></h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p class="about-highlight">
+        "I'm a Computer Science student driven by the idea of building intelligent, high-impact systems that solve real-world problems."
+      </p>
+
+      <p>
+        Currently pursuing B.Tech in Computer Science and Engineering at Lovely Professional University, I focus on mastering Data Structures & Algorithms, Machine Learning, and scalable system design. I enjoy turning complex problems into efficient, elegant solutions.
+      </p>
+
+      <p>
+        From designing low-latency trading systems in Java to developing machine learning models with high predictive accuracy, I combine strong analytical thinking with practical implementation skills. I’m constantly exploring new technologies to build systems that are not just functional, but meaningful and impactful.
+      </p>
+    </div>
+    <div class="about-cards reveal">
+      <div class="about-card">
+        <div class="about-card-icon">🎓</div>
+        <div class="about-card-text"><h4>Lovely Professional University</h4><p>B.Tech CSE · CGPA: 8.31 · 2023 – Present</p></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">💡</div>
+        <div class="about-card-text"><h4>Core Focus</h4><p>DSA · Machine Learning · Scalable Systems</p></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">📍</div>
+        <div class="about-card-text"><h4>Location</h4><p>Phagwara, Punjab · Open to Remote &amp; Hybrid</p></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🚀</div>
+        <div class="about-card-text"><h4>Aspiration</h4><p>Data Scientist · ML Engineer · Data Engineer</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================  SKILLS  ============================ -->
+<section id="skills">
+  <div class="section-label">02 — Expertise</div>
+  <h2 class="section-title">Skills &amp; <span style="color:var(--gold)">Technologies</span></h2>
+  <div class="skills-container">
+    <div class="skills-group reveal">
+      <h3>Languages</h3>
+      <div class="skills-tags">
+        <span class="skill-tag">Java</span><span class="skill-tag">Python</span>
+        <span class="skill-tag">C++</span><span class="skill-tag">C</span><span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skills-group reveal">
+      <h3>Tools &amp; Frameworks</h3>
+      <div class="skills-tags">
+        <span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Scikit-learn</span><span class="skill-tag">Power BI</span>
+        <span class="skill-tag">DAX</span><span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span><span class="skill-tag">Apache Hadoop</span>
+      </div>
+    </div>
+    <div class="skills-group reveal">
+      <h3>Domains</h3>
+      <div class="skills-tags">
+        <span class="skill-tag">Machine Learning</span><span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">Data Analytics</span><span class="skill-tag">Digital Marketing</span>
+        <span class="skill-tag">Generative AI</span><span class="skill-tag">Financial Systems</span>
+      </div>
+    </div>
+    <div class="skills-group reveal">
+      <h3>Soft Skills</h3>
+      <div class="skills-tags">
+        <span class="skill-tag">Problem-Solving</span><span class="skill-tag">Analytical Thinking</span>
+        <span class="skill-tag">Adaptability</span><span class="skill-tag">Project Management</span>
+        <span class="skill-tag">Team Collaboration</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+<div class="section-orb-divider"></div>
+
+<!-- ============================  PROJECTS  ============================ -->
+<section id="projects">
+  <div class="section-label">03 — Work</div>
+  <h2 class="section-title">Featured <span style="color:var(--gold)">Projects</span></h2>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-number">01</div>
+      <div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">Concurrency</span><span class="project-tag">Systems</span></div>
+      <h3 class="project-title">Real-Time Order Matching &amp; Trade Analytics System</h3>
+      <p class="project-desc">Production-grade trading system simulating exchange mechanics: order book management, concurrent trade execution, and market data analytics. Handles 10–200 orders/sec with low-latency design patterns.</p>
+      <div class="project-footer">
+        <a href="https://github.com/Sarrthhak/Real-Time-Order-Matching-and-Trade-Analytics-System" target="_blank" class="project-link">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">02</div>
+      <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">ML</span><span class="project-tag">Analytics</span></div>
+      <h3 class="project-title">Personal Finance Advisor</h3>
+      <p class="project-desc">ML-based finance advisor using real Indian consumer datasets. Achieved 95% accuracy in spending prediction (R² = 0.9979, MAE ≈ ₹450). Categorizes users into Saving / Balanced / Overspending profiles.</p>
+      <div class="project-footer">
+        <a href="https://github.com/Sarrthhak/Personal-Finance-Advisor" target="_blank" class="project-link">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">03</div>
+      <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">DAX</span><span class="project-tag">HR Analytics</span></div>
+      <h3 class="project-title">Employee Attrition Analysis Dashboard</h3>
+      <p class="project-desc">Interactive HR analytics dashboard analyzing 1,470 employees with 16% overall attrition rate. Identified 56% higher attrition in Sales, income gap among leavers, and overtime correlation patterns.</p>
+      <div class="project-footer">
+        <a href="https://github.com/Sarrthhak/Employee-Attrition-Analysis-Dashboard-/tree/main" target="_blank" class="project-link">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================  CERTIFICATIONS  ============================ -->
+<section id="certifications">
+  <div class="section-label">04 — Credentials</div>
+  <h2 class="section-title">Certifications &amp; <span style="color:var(--gold)">Courses</span></h2>
+  <div class="certs-grid">
+
+    <div class="cert-card reveal" onclick="openModal('nptel')">
+      <div class="cert-glow"></div>
+      <span class="cert-issuer-badge badge-nptel">NPTEL · IIT Kharagpur</span>
+      <div class="cert-name">Deep Learning</div>
+      <div class="cert-date">Jan – Apr 2025 · Score: 65% · Elite Certification</div>
+      <button class="cert-view-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        View Certificate
+      </button>
+    </div>
+
+    <div class="cert-card reveal" onclick="openModal('dsa')">
+      <div class="cert-glow"></div>
+      <span class="cert-issuer-badge badge-udemy">Udemy</span>
+      <div class="cert-name">Mastering Data Structures &amp; Algorithms using C and C++</div>
+      <div class="cert-date">Nov 26, 2025 · 76 Total Hours · Abdul Bari</div>
+      <button class="cert-view-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        View Certificate
+      </button>
+    </div>
+
+    <div class="cert-card reveal" onclick="openModal('cpp')">
+      <div class="cert-glow"></div>
+      <span class="cert-issuer-badge badge-udemy">Udemy</span>
+      <div class="cert-name">Learn C++ Programming — Beginner to Advance</div>
+      <div class="cert-date">Nov 26, 2025 · 30.5 Total Hours · Abdul Bari</div>
+      <button class="cert-view-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        View Certificate
+      </button>
+    </div>
+
+    <div class="cert-card reveal" onclick="openModal('automata')">
+      <div class="cert-glow"></div>
+      <span class="cert-issuer-badge badge-infosys">Infosys Springboard</span>
+      <div class="cert-name">Computational Theory: Language Principle &amp; Finite Automata</div>
+      <div class="cert-date">Completed Aug 31, 2025 · Issued Sep 10, 2025</div>
+      <button class="cert-view-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        View Certificate
+      </button>
+    </div>
+
+    <div class="cert-card reveal" onclick="openModal('genai')">
+      <div class="cert-glow"></div>
+      <span class="cert-issuer-badge badge-infosys">Infosys Springboard</span>
+      <div class="cert-name">Master Generative AI & Generative AI tools(ChatGPT & more)</div>
+      <div class="cert-date">Completed Aug 20, 2025 · Issued Dec 10, 2025</div>
+      <button class="cert-view-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        View Certificate
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATE MODAL -->
+<div class="modal-overlay" id="cert-modal-overlay" onclick="closeCertModal(event)">
+  <div class="cert-modal">
+    <button class="modal-close" onclick="closeCertModal(event)">✕</button>
+    <div class="modal-issuer" id="modal-issuer"></div>
+    <div class="modal-title"  id="modal-title"></div>
+    <div class="modal-meta"   id="modal-meta"></div>
+    <div id="cert-preview-wrap"></div>
+    <div class="modal-actions">
+      <a href="#" class="modal-download" id="modal-download-btn" target="_blank" rel="noopener">
+        ⬇&nbsp; Open / Download Certificate
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+<div class="section-orb-divider"></div>
+
+<!-- ============================  EDUCATION  ============================ -->
+<section id="education">
+  <div class="section-label">05 — Academic Background</div>
+  <h2 class="section-title">My <span style="color:var(--gold)">Education</span></h2>
+  <div class="edu-timeline">
+
+    <div class="edu-card reveal">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-body">
+        <div class="edu-degree">Bachelor of Technology — Computer Science &amp; Engineering</div>
+        <div class="edu-school">Lovely Professional University</div>
+        <div class="edu-location">📍 Phagwara, Punjab</div>
+        <div class="edu-meta">
+          <span class="edu-badge">Aug 2023 – Present</span>
+          <span class="edu-badge highlight">CGPA: 8.31</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-icon">🏫</div>
+      <div class="edu-body">
+        <div class="edu-degree">Intermediate (PCM)</div>
+        <div class="edu-school">Brilliant Academy H.S. School</div>
+        <div class="edu-location">📍 Indore, Madhya Pradesh</div>
+        <div class="edu-meta">
+          <span class="edu-badge">Mar 2021 – May 2022</span>
+          <span class="edu-badge highlight">80.3%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-icon">📚</div>
+      <div class="edu-body">
+        <div class="edu-degree">Matriculation</div>
+        <div class="edu-school">Holy Family Convent School</div>
+        <div class="edu-location">📍 Indore, Madhya Pradesh</div>
+        <div class="edu-meta">
+          <span class="edu-badge">Mar 2019 – May 2020</span>
+          <span class="edu-badge highlight">78%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================  EXPERIENCE  ============================ -->
+<section id="experience">
+  <div class="section-label">06 — Training</div>
+  <h2 class="section-title">Professional <span style="color:var(--gold)">Experience</span></h2>
+  <div class="exp-card reveal">
+    <div class="exp-header">
+      <div class="exp-company">CSE Pathshala</div>
+      <div class="exp-period">Jun 2025 – Jul 2025</div>
+    </div>
+    <div class="exp-role">C++ Programming: OOPs and DSA — Trainee</div>
+    <ul class="exp-bullets">
+      <li>Completed 35+ hours of live online training covering C++ OOPs, Data Structures, and efficient algorithm design</li>
+      <li>Met all attendance requirements and performed well on final assessments and assigned tasks</li>
+      <li>Built 3 complete projects: Student Record System, Library Management System, and Browser History Management System</li>
+      <li>Gained hands-on experience with advanced C++ concepts including polymorphism, inheritance, and STL containers</li>
+    </ul>
+    <br>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+      <span class="skill-tag" style="padding:6px 16px;font-size:0.75rem;">C++</span>
+      <span class="skill-tag" style="padding:6px 16px;font-size:0.75rem;">OOP</span>
+      <span class="skill-tag" style="padding:6px 16px;font-size:0.75rem;">Data Structures</span>
+      <span class="skill-tag" style="padding:6px 16px;font-size:0.75rem;">Algorithms</span>
+      <span class="skill-tag" style="padding:6px 16px;font-size:0.75rem;">35+ Hours</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+<div class="section-orb-divider"></div>
+
+<div class="section-divider"></div>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-label">05.5 — Milestones</div>
+  <h2 class="section-title">Achievements &amp; <span style="color:var(--gold)">Recognition</span></h2>
+  <div class="achievements-grid">
+
+    <div class="achievement-card reveal">
+      <div class="achievement-icon">⚡</div>
+      <div class="achievement-body">
+        <div class="achievement-num">200+</div>
+        <div class="achievement-title">Problems Solved on LeetCode</div>
+        <p class="achievement-desc">Consistently practising Data Structures &amp; Algorithms — arrays, trees, graphs, dynamic programming, and more.</p>
+        <a href="https://leetcode.com/u/sarrthhak/" target="_blank" class="achievement-link">View Profile →</a>
+      </div>
+    </div>
+
+    <div class="achievement-card reveal">
+      <div class="achievement-icon">🏆</div>
+      <div class="achievement-body">
+        <div class="achievement-num">Explorer</div>
+        <div class="achievement-title">Salesforce Trailhead Rank</div>
+        <p class="achievement-desc">Earned the Explorer rank on Salesforce Trailhead by completing modules on CRM, cloud computing, and business technology.</p>
+        <a href="https://www.salesforce.com/trailblazer/sarrthhak" target="_blank" class="achievement-link">View Profile →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================  WHEN I'M NOT CODING  ============================ -->
+<section id="not-coding">
+  <div class="section-label">07 — Beyond the Screen</div>
+  <h2 class="section-title">When I'm Not <span style="color:var(--gold)">Coding</span></h2>
+  <p class="not-coding-intro reveal">
+    Away from the keyboard, I pick up a pencil. Sketching is how I decompress — translating favourite anime characters onto paper, one careful line at a time. It's a different kind of precision from writing code, but the focus feels the same.
+  </p>
+  <div class="sketches-grid">
+
+    <div class="sketch-card reveal" onclick="openSketchModal(0)">
+      <img src="1.jpeg" alt="Vinsmoke Sanji" loading="lazy">
+      <div class="sketch-expand-hint">⤢</div>
+      <div class="sketch-overlay">
+        <div class="sketch-caption">Vinsmoke Sanji</div>
+        <div class="sketch-series">One Piece</div>
+      </div>
+    </div>
+
+    <div class="sketch-card reveal" onclick="openSketchModal(1)">
+      <img src="2.jpeg" alt="Roronoa Zoro" loading="lazy">
+      <div class="sketch-expand-hint">⤢</div>
+      <div class="sketch-overlay">
+        <div class="sketch-caption">Roronoa Zoro</div>
+        <div class="sketch-series">One Piece</div>
+      </div>
+    </div>
+
+    <div class="sketch-card reveal" onclick="openSketchModal(2)">
+      <img src="3.jpeg" alt="Shinobu Kocho" loading="lazy">
+      <div class="sketch-expand-hint">⤢</div>
+      <div class="sketch-overlay">
+        <div class="sketch-caption">Shinobu Kocho</div>
+        <div class="sketch-series">Demon Slayer</div>
+      </div>
+    </div>
+
+    <div class="sketch-card reveal" onclick="openSketchModal(3)">
+      <img src="4.jpeg" alt="Eren Yeager" loading="lazy">
+      <div class="sketch-expand-hint">⤢</div>
+      <div class="sketch-overlay">
+        <div class="sketch-caption">Eren Yeager</div>
+        <div class="sketch-series">Attack on Titan</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKETCH MODAL -->
+<div class="modal-overlay" id="sketch-modal-overlay" onclick="closeSketchModal(event)">
+  <div class="sketch-modal">
+    <button class="sketch-modal-close" onclick="closeSketchModal(event)">✕</button>
+    <img id="sketch-modal-img" src="" alt="">
+    <div class="sketch-modal-caption">
+      <strong id="sketch-modal-name"></strong>
+      <em id="sketch-modal-series"></em>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- RESUME DOWNLOAD -->
+<div class="resume-section reveal">
+  <p>Ready to make an impact together?</p>
+  <a href="https://drive.google.com/file/d/1W3iobOQhmUAzgvmlCppo_N4VtFZ8Mxxr/view?usp=drive_link"
+     target="_blank" rel="noopener" class="btn-primary">
+    ⬇&nbsp;&nbsp;Download Resume (PDF)
+  </a>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ============================  CONTACT  ============================ -->
+<section id="contact">
+  <div class="section-label">08 — Connect</div>
+  <h2 class="section-title">Get In <span style="color:var(--gold)">Touch</span></h2>
+  <div class="contact-grid">
+
+    <div class="contact-info reveal">
+      <h3>Let's build something extraordinary together.</h3>
+      <p>I'm open to internships, full-time opportunities, and interesting collaborations. Whether it's a software engineering role or a data-driven project — let's talk.</p>
+      <div class="contact-links">
+        <a href="mailto:sarthakpipladiya31@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉️</div>
+          <div class="contact-link-info"><label>Email</label><span>sarthakpipladiya31@gmail.com</span></div>
+        </a>
+        <a href="tel:+917879715178" class="contact-link">
+          <div class="contact-link-icon">📱</div>
+          <div class="contact-link-info"><label>Phone</label><span>+91 7879715178</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/sarrthakk" target="_blank" class="contact-link">
+          <div class="contact-link-icon">💼</div>
+          <div class="contact-link-info"><label>LinkedIn</label><span>linkedin.com/in/sarrthakk</span></div>
+        </a>
+        <a href="https://github.com/Sarrthhak" target="_blank" class="contact-link">
+          <div class="contact-link-icon">🐙</div>
+          <div class="contact-link-info"><label>GitHub</label><span>github.com/Sarrthhak</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <form class="contact-form reveal" id="contact-form" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="field-name">Your Name</label>
+        <input id="field-name" type="text" class="form-input" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="field-email">Email Address</label>
+        <input id="field-email" type="email" class="form-input" placeholder="hello@company.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="field-subject">Subject</label>
+        <input id="field-subject" type="text" class="form-input" placeholder="Internship Opportunity" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="field-message">Message</label>
+        <textarea id="field-message" class="form-textarea" placeholder="Let's discuss your project or opportunity..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="form-submit-btn">Send Message →</button>
+      <div class="form-status" id="form-status"></div>
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SP</div>
+  <div class="footer-text">© 2025 Sarthak Pipladiya · All rights reserved</div>
+  <div class="footer-links">
+    <a href="https://github.com/Sarrthhak" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/sarrthakk" target="_blank">LinkedIn</a>
+    <a href="mailto:sarthakpipladiya31@gmail.com">Email</a>
+  </div>
+</footer>
+
+<!-- PHOTO SLOT: auto-hide placeholder when photo is set -->
+<script>
+  (function() {
+    const img = document.getElementById('hero-photo-img');
+    const placeholder = document.getElementById('hero-photo-placeholder');
+    if (img && img.src && img.src !== window.location.href && img.getAttribute('src') !== '') {
+      img.style.display = 'block';
+      if (placeholder) placeholder.style.display = 'none';
+    }
+  })();
+</script>
+
+<script src="script.js"></script>
+
+<!--
+  ════════════════════════════════════════════════════════
+  CERTIFICATE PREVIEW IMAGES
+  ────────────────────────────────────────────────────────
+  Rename / drop your certificate screenshots alongside
+  index.html using these exact filenames:
+    cert_nptel.jpeg
+    cert_dsa.jpeg
+    cert_cpp.jpeg
+    cert_automata.jpeg
+    cert_genai.jpeg
+
+  If the files aren't present, the modal falls back to a
+  styled text placeholder automatically.
+  ════════════════════════════════════════════════════════
+-->
+</body>
+</html>
